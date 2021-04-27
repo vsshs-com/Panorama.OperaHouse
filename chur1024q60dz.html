@@ -19,7 +19,8 @@ var sources = {
 	var viewer = OpenSeadragon({
 	  id: "seadragon-viewer",
 	  //prefixUrl: "//openseadragon.github.io/openseadragon/images/",
-	  tileSources: sources
+	  tileSources: sources,
+	  showNavigator: true
 	});
 	
 	viewer.addHandler('bookmark-url-change', function(event) {
