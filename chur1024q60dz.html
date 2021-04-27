@@ -1,0 +1,29 @@
+<div id="seadragon-viewer" style="width:100%; height:100%;"></div>
+<script src="openseadragon.min.js"></script>
+<script src="openseadragon-bookmark-url.js"></script>
+<script>
+
+var sources = {
+  Image: {
+    xmlns: "http://schemas.microsoft.com/deepzoom/2008",
+    Url: "chur_1024_q60_dz_files/",
+    Format: "jpg",
+    Overlap: "1",
+    TileSize: "1024",
+    Size: {
+      Width:  "30562",
+      Height: "16893"
+    }
+  }
+};
+	var viewer = OpenSeadragon({
+	  id: "seadragon-viewer",
+	  //prefixUrl: "//openseadragon.github.io/openseadragon/images/",
+	  tileSources: sources
+	});
+	
+	viewer.addHandler('bookmark-url-change', function(event) {
+            });
+
+            viewer.bookmarkUrl();
+</script>
