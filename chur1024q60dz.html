@@ -3,27 +3,29 @@
 <script src="openseadragon-bookmark-url.js"></script>
 <script>
 
-var sources = {
-  Image: {
-    xmlns: "http://schemas.microsoft.com/deepzoom/2008",
-    Url: "chur_1024_q60_dz_files/",
-    Format: "jpg",
-    Overlap: "1",
-    TileSize: "1024",
-    Size: {
-      Width:  "30562",
-      Height: "16893"
-    }
-  }
-};
+	var sources = {
+	  Image: {
+		xmlns: "http://schemas.microsoft.com/deepzoom/2008",
+		Url: "chur_1024_q60_dz_files/",
+		Format: "jpg",
+		Overlap: "1",
+		TileSize: "1024",
+		Size: {
+		  Width:  "30562",
+		  Height: "16893"
+		}
+	  }
+	};
+	console.log("before", OpenSeadragon.pixelDensityRatio);
+	OpenSeadragon.pixelDensityRatio = 1
 	var viewer = OpenSeadragon({
 	  id: "seadragon-viewer",
 	  //prefixUrl: "//openseadragon.github.io/openseadragon/images/",
 	  tileSources: sources,
 	  showNavigator: true,
-	  pixelDensityRatio = 1
+	  
 	});
-	
+	console.log("after", OpenSeadragon.pixelDensityRatio);
 	viewer.addHandler('bookmark-url-change', function(event) {
             });
 
